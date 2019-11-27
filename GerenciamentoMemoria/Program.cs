@@ -14,6 +14,7 @@ namespace GerenciamentoMemoria
             int pagina1 = 0;
             int pagina2 = 0;
             int pagina3 = 0;
+            int i = 0;
             List<int> entradas         = new List<int>();
             List<int> historiocPagina1 = new List<int>();
             List<int> historiocPagina2 = new List<int>();
@@ -45,63 +46,91 @@ namespace GerenciamentoMemoria
             entradas.Add(1);
 
         
-            for (int i = 0; i < entradas.Count; i++)
+            for (i = 0; i < entradas.Count; i++)
             {
 
-                    if (pagina1 == 0)
+                if (i==0)
                 {
                     pagina1 = entradas[i];
-                    Console.WriteLine("pagina 1: " + pagina1);
-                    Console.WriteLine("pagina 2: " + pagina2);
-                    Console.WriteLine("pagina 3: " + pagina3);
+
+                    historiocPagina1.Add(pagina1);
+                    historiocPagina2.Add(pagina2);
+                    historiocPagina3.Add(pagina3);
+
+                    Console.WriteLine("pagina 1: " + historiocPagina1[i]);
+                    Console.WriteLine("pagina 2: " + historiocPagina2[i]);
+                    Console.WriteLine("pagina 3: " + historiocPagina3[i]);
                 }
-                else if (pagina2 == 0)
+                else if (i==1)
                 {
                     pagina2 = entradas[i];
-                    Console.WriteLine("pagina 1: " + pagina1);
-                    Console.WriteLine("pagina 2: " + pagina2);
-                    Console.WriteLine("pagina 3: " + pagina3);
+
+                    historiocPagina1.Add(pagina1);
+                    historiocPagina2.Add(pagina2);
+                    historiocPagina3.Add(pagina3);
+
+                    Console.WriteLine("pagina 1: " + historiocPagina1[i]);
+                    Console.WriteLine("pagina 2: " + historiocPagina2[i]);
+                    Console.WriteLine("pagina 3: " + historiocPagina3[i]);
                 }
-                else if (pagina3 == 0)
+                else if (i==2)
                 {
                     pagina3 = entradas[i];
-                    Console.WriteLine("pagina 1: " + pagina1);
-                    Console.WriteLine("pagina 2: " + pagina2);
-                    Console.WriteLine("pagina 3: " + pagina3);
+
+                    historiocPagina1.Add(pagina1);
+                    historiocPagina2.Add(pagina2);
+                    historiocPagina3.Add(pagina3);
+
+                    Console.WriteLine("pagina 1: " + historiocPagina1[i]);
+                    Console.WriteLine("pagina 2: " + historiocPagina2[i]);
+                    Console.WriteLine("pagina 3: " + historiocPagina3[i]);
                 }
-                else {
+                else
+                {
                     if (pagina1 == entradas[i])
                     {
-                        //Console.WriteLine("pagina 1: " + pagina1);
-                        //Console.WriteLine("pagina 2: " + pagina2);
-                        //Console.WriteLine("pagina 3: " + pagina3);
+
+                        historiocPagina1.Add(pagina1);
+                        historiocPagina2.Add(pagina2);
+                        historiocPagina3.Add(pagina3);
+                        Console.WriteLine("pagina 1: " + pagina1);
+                        Console.WriteLine("pagina 2: " + pagina2);
+                        Console.WriteLine("pagina 3: " + pagina3);
+                        
+
+
                     }
                     else if (pagina2 == entradas[i])
                     {
-                        //Console.WriteLine("pagina 1: " + pagina1);
-                        //Console.WriteLine("pagina 2: " + pagina2);
-                        //Console.WriteLine("pagina 3: " + pagina3);
+                        historiocPagina1.Add(pagina1);
+                        historiocPagina2.Add(pagina2);
+                        historiocPagina3.Add(pagina3);
+                        Console.WriteLine("pagina 1: " + pagina1);
+                        Console.WriteLine("pagina 2: " + pagina2);
+                        Console.WriteLine("pagina 3: " + pagina3);
+                      
+
                     }
                     else if (pagina3 == entradas[i])
                     {
-                        //Console.WriteLine("pagina 1: " + pagina1);
-                        //Console.WriteLine("pagina 2: " + pagina2);
-                        //Console.WriteLine("pagina 3: " + pagina3);
+
+                        historiocPagina1.Add(pagina1);
+                        historiocPagina2.Add(pagina2);
+                        historiocPagina3.Add(pagina3);
+                        Console.WriteLine("pagina 1: " + pagina1);
+                        Console.WriteLine("pagina 2: " + pagina2);
+                        Console.WriteLine("pagina 3: " + pagina3);
+                        
                     }
-                    else {
-                       // int dintanciaPagina1 = contarDistancia(pagina1,entradas,i);
-                        int dintanciaPagina2 = 0;
-                        int dintanciaPagina3 = 0;
+                    else
+                    {
+                        int distanciaPagina1 = contarDistancia(pagina1,entradas,i);
+                        int distanciaPagina2 = 0;
+                        int distanciaPagina3 = 0;
 
                     }
-
-
 
                 }
-
-
-
-
 
 
                 Console.WriteLine("");
