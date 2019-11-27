@@ -22,17 +22,19 @@ namespace GerenciamentoMemoria
             entradas.Add(7);
             entradas.Add(9);
             entradas.Add(1);
+            
             entradas.Add(2);
             entradas.Add(9);
-
             entradas.Add(3);
+            
             entradas.Add(9);
             entradas.Add(4);
             entradas.Add(2);
-            entradas.Add(4);
-
+            
+            entradas.Add(3);
             entradas.Add(9);
             entradas.Add(3);
+            
             entradas.Add(2);
             entradas.Add(1);
             entradas.Add(2);
@@ -40,6 +42,7 @@ namespace GerenciamentoMemoria
             entradas.Add(9);
             entradas.Add(1);
             entradas.Add(7);
+            
             entradas.Add(9);
             entradas.Add(1);
 
@@ -122,9 +125,50 @@ namespace GerenciamentoMemoria
                     }
                     else
                     {
-                        int distanciaPagina1 = contarDistancia(pagina1, entradas, i);
-                        int distanciaPagina2 = 0;
-                        int distanciaPagina3 = 0;
+                        int distanciaPagina1 = contarDistancia(pagina1, i);
+                        int distanciaPagina2 = contarDistancia(pagina2, i);
+                        int distanciaPagina3 = contarDistancia(pagina3, i);
+
+                        if ((distanciaPagina1 > distanciaPagina2) && (distanciaPagina1 >= distanciaPagina3))
+                        {
+                            pagina1 = entradas[i];
+
+                            historiocPagina1.Add(pagina1);
+                            historiocPagina2.Add(pagina2);
+                            historiocPagina3.Add(pagina3);
+
+                            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
+                            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
+                            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+
+                        }
+                        else if ((distanciaPagina2 > distanciaPagina1) && (distanciaPagina2 > distanciaPagina3))
+                        {
+                            pagina2 = entradas[i];
+
+                            historiocPagina1.Add(pagina1);
+                            historiocPagina2.Add(pagina2);
+                            historiocPagina3.Add(pagina3);
+
+                            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
+                            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
+                            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+
+
+                        }
+                        else {
+                            pagina3 = entradas[i];
+
+                            historiocPagina1.Add(pagina1);
+                            historiocPagina2.Add(pagina2);
+                            historiocPagina3.Add(pagina3);
+
+                            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
+                            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
+                            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+                        }
+
+
 
                     }
 
@@ -143,7 +187,7 @@ namespace GerenciamentoMemoria
             //});
         }
 
-        public int contarDistancia(int valorPagina, List<int> entradas, int posicaoInicial)
+        public int contarDistancia(int valorPagina, int posicaoInicial)
         {
             for (int i = posicaoInicial; i < entradas.Count; i++)
             {
