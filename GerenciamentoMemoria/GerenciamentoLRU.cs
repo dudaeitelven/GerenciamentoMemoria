@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GerenciamentoMemoria
@@ -179,6 +180,18 @@ namespace GerenciamentoMemoria
             }
 
             return 9999;
+        }
+
+
+        public void AtualizarHisotico()
+        {
+            Thread.Sleep(10);
+            new Thread(() => {
+                historiocPagina1.Add(pagina1);
+                historiocPagina2.Add(pagina2);
+                historiocPagina3.Add(pagina3);
+            }).Start();
+
         }
 
 
