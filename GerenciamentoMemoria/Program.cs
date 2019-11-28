@@ -11,8 +11,11 @@ namespace GerenciamentoMemoria
     {
         static void Main(string[] args)
         {
-            GerenciamentoOtimo gerenciamentoOtimo = new GerenciamentoOtimo();
-            gerenciamentoOtimo.SimularGerenciamentoOtimo();
+            //GerenciamentoOtimo gerenciamentoOtimo = new GerenciamentoOtimo();
+            //gerenciamentoOtimo.SimularGerenciamentoOtimo();
+            GerenciamentoLru gerenciamentoLru = new GerenciamentoLru();
+            gerenciamentoLru.SimularGerenciamentoLru();
+
         }
 
 
