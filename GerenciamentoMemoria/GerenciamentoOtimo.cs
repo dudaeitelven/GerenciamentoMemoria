@@ -126,23 +126,6 @@ namespace GerenciamentoMemoria
 
             Console.ReadKey();
         }
-        public void AtualizarHisotico()
-        {
-            new Thread(() => {
-                historiocPagina1.Add(pagina1);
-                historiocPagina2.Add(pagina2);
-                historiocPagina3.Add(pagina3);
-            }).Start();
-            Thread.Sleep(10);
-
-        }
-
-        public void MostrarConsole()
-        {
-            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
-            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
-            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
-        }
 
         public int contarDistancia(int valorPagina, int posicaoInicial)
         {
@@ -155,6 +138,24 @@ namespace GerenciamentoMemoria
             }
 
             return 9999;
+        }
+
+        public void AtualizarHisotico()
+        {
+            new Thread(() => {
+                historiocPagina1.Add(pagina1);
+                historiocPagina2.Add(pagina2);
+                historiocPagina3.Add(pagina3);
+            }).Start();
+            Thread.Sleep(10);
+        }
+
+        public void MostrarConsole()
+        {
+            Console.WriteLine("Entrada: " + entradas[i]);
+            Console.WriteLine("Pagina 1: " + historiocPagina1[i]);
+            Console.WriteLine("Pagina 2: " + historiocPagina2[i]);
+            Console.WriteLine("Pagina 3: " + historiocPagina3[i]);
         }
 
     }
