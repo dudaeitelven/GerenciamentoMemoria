@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GerenciamentoMemoria
@@ -54,74 +55,39 @@ namespace GerenciamentoMemoria
                 {
                     pagina1 = entradas[i];
 
-                    historiocPagina1.Add(pagina1);
-                    historiocPagina2.Add(pagina2);
-                    historiocPagina3.Add(pagina3);
-
-                    Console.WriteLine("pagina 1: " + historiocPagina1[i]);
-                    Console.WriteLine("pagina 2: " + historiocPagina2[i]);
-                    Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+                    AtualizarHisotico();
+                    MostrarConsole();
                 }
                 else if (i == 1)
                 {
                     pagina2 = entradas[i];
 
-                    historiocPagina1.Add(pagina1);
-                    historiocPagina2.Add(pagina2);
-                    historiocPagina3.Add(pagina3);
-
-                    Console.WriteLine("pagina 1: " + historiocPagina1[i]);
-                    Console.WriteLine("pagina 2: " + historiocPagina2[i]);
-                    Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+                    AtualizarHisotico();
+                    MostrarConsole();
                 }
                 else if (i == 2)
                 {
                     pagina3 = entradas[i];
 
-                    historiocPagina1.Add(pagina1);
-                    historiocPagina2.Add(pagina2);
-                    historiocPagina3.Add(pagina3);
-
-                    Console.WriteLine("pagina 1: " + historiocPagina1[i]);
-                    Console.WriteLine("pagina 2: " + historiocPagina2[i]);
-                    Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+                    AtualizarHisotico();
+                    MostrarConsole();
                 }
                 else
                 {
                     if (pagina1 == entradas[i])
                     {
-
-                        historiocPagina1.Add(pagina1);
-                        historiocPagina2.Add(pagina2);
-                        historiocPagina3.Add(pagina3);
-                        Console.WriteLine("pagina 1: " + pagina1);
-                        Console.WriteLine("pagina 2: " + pagina2);
-                        Console.WriteLine("pagina 3: " + pagina3);
-
-
-
+                        AtualizarHisotico();
+                        MostrarConsole();
                     }
                     else if (pagina2 == entradas[i])
                     {
-                        historiocPagina1.Add(pagina1);
-                        historiocPagina2.Add(pagina2);
-                        historiocPagina3.Add(pagina3);
-                        Console.WriteLine("pagina 1: " + pagina1);
-                        Console.WriteLine("pagina 2: " + pagina2);
-                        Console.WriteLine("pagina 3: " + pagina3);
-
-
+                        AtualizarHisotico();
+                        MostrarConsole();
                     }
                     else if (pagina3 == entradas[i])
                     {
-
-                        historiocPagina1.Add(pagina1);
-                        historiocPagina2.Add(pagina2);
-                        historiocPagina3.Add(pagina3);
-                        Console.WriteLine("pagina 1: " + pagina1);
-                        Console.WriteLine("pagina 2: " + pagina2);
-                        Console.WriteLine("pagina 3: " + pagina3);
-
+                        AtualizarHisotico();
+                        MostrarConsole();
                     }
                     else
                     {
@@ -133,58 +99,49 @@ namespace GerenciamentoMemoria
                         {
                             pagina1 = entradas[i];
 
-                            historiocPagina1.Add(pagina1);
-                            historiocPagina2.Add(pagina2);
-                            historiocPagina3.Add(pagina3);
-
-                            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
-                            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
-                            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+                            AtualizarHisotico();
+                            MostrarConsole();
 
                         }
                         else if ((distanciaPagina2 > distanciaPagina1) && (distanciaPagina2 > distanciaPagina3))
                         {
                             pagina2 = entradas[i];
 
-                            historiocPagina1.Add(pagina1);
-                            historiocPagina2.Add(pagina2);
-                            historiocPagina3.Add(pagina3);
-
-                            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
-                            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
-                            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
-
-
+                            AtualizarHisotico();
+                            MostrarConsole();
                         }
                         else {
                             pagina3 = entradas[i];
 
-                            historiocPagina1.Add(pagina1);
-                            historiocPagina2.Add(pagina2);
-                            historiocPagina3.Add(pagina3);
-
-                            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
-                            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
-                            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
+                            AtualizarHisotico();
+                            MostrarConsole();
                         }
-
-
 
                     }
 
                 }
 
-
                 Console.WriteLine("");
-                //Console.Write($"{entradas[i]} ");
             }
 
-
             Console.ReadKey();
+        }
+        public void AtualizarHisotico()
+        {
+            Thread.Sleep(10);
+            new Thread(() => {
+                historiocPagina1.Add(pagina1);
+                historiocPagina2.Add(pagina2);
+                historiocPagina3.Add(pagina3);
+            }).Start();
 
-            //new Thread(() => {
+        }
 
-            //});
+        public void MostrarConsole()
+        {
+            Console.WriteLine("pagina 1: " + historiocPagina1[i]);
+            Console.WriteLine("pagina 2: " + historiocPagina2[i]);
+            Console.WriteLine("pagina 3: " + historiocPagina3[i]);
         }
 
         public int contarDistancia(int valorPagina, int posicaoInicial)
