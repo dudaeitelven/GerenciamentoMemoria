@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="GerenciamentoLru.cs" />
     <Compile Include="GerenciamentoOtimo.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
