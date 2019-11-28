@@ -11,13 +11,8 @@ namespace GerenciamentoMemoria
     {
         static void Main(string[] args)
         {
-            //GerenciamentoOtimo gerenciamentoOtimo = new GerenciamentoOtimo();
-            //gerenciamentoOtimo.SimularGerenciamentoOtimo();
-            GerenciamentoLru gerenciamentoLru = new GerenciamentoLru();
-            gerenciamentoLru.SimularGerenciamentoLru();
-
+            Menu menu = new Menu();
+            menu.Iniciar();
         }
-
-
     }
 }
