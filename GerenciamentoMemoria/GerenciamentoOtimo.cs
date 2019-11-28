@@ -128,12 +128,12 @@ namespace GerenciamentoMemoria
         }
         public void AtualizarHisotico()
         {
-            Thread.Sleep(10);
             new Thread(() => {
                 historiocPagina1.Add(pagina1);
                 historiocPagina2.Add(pagina2);
                 historiocPagina3.Add(pagina3);
             }).Start();
+            Thread.Sleep(10);
 
         }
 
