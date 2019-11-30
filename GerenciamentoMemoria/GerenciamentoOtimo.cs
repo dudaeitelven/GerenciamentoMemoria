@@ -20,33 +20,8 @@ namespace GerenciamentoMemoria
 
         public void SimularGerenciamentoOtimo()
         {
-            entradas.Add(7);
-            entradas.Add(9);
-            entradas.Add(1);
-            
-            entradas.Add(2);
-            entradas.Add(9);
-            entradas.Add(3);
-            
-            entradas.Add(9);
-            entradas.Add(4);
-            entradas.Add(2);
-            
-            entradas.Add(3);
-            entradas.Add(9);
-            entradas.Add(3);
-            
-            entradas.Add(2);
-            entradas.Add(1);
-            entradas.Add(2);
-
-            entradas.Add(9);
-            entradas.Add(1);
-            entradas.Add(7);
-            
-            entradas.Add(9);
-            entradas.Add(1);
-
+            ImpotarEntradas impotarEntradas = new ImpotarEntradas();
+            entradas = impotarEntradas.CarregarEntradas();
 
             for (i = 0; i < entradas.Count; i++)
             {
